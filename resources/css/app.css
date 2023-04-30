@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    font-family: 'Almarai', sans-serif;
+    direction: rtl;
+    background-image: url("../../public/images/vor_background.png");
+}
+
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(209, 213 ,219);
+    transition: opacity 0.75s, visibility 0.75s;
+    z-index: 50;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 5px solid #dddddd;
+    border-top-color:  rgba(0,155,114,1);
+    border-radius: 50%;
+    animation: loading  1.5s ease infinite;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+html {
+    visibility: visible;
+    opacity: 1;
+}
