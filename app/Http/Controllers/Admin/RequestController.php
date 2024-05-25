@@ -21,6 +21,30 @@ class RequestController extends Controller
         if(request('search')){
             $requests->where('name', 'like', '%' . request('search') . '%');
         }
+
+        if(request('classification') === 'initiative'){
+           $requests->where('classification', '=', 'initiative');
+        };
+
+        if(request('classification') === 'opportunity'){
+            $requests->where('classification', '=', 'opportunity');
+         };
+
+         if(request('status') === 'rejected'){
+            $requests->where('status', '=', 'rejected');
+         }
+
+         if(request('status') === 'pending'){
+            $requests->where('status', '=', 'pending');
+         }
+
+         if(request('status') === 'accepted'){
+            $requests->where('status', '=', 'accepted');
+         }
+
+        // if(request('classification')){
+        //     $requests->where('classification', '=', 'opportunity');
+        //  };
         return view('admin.requests.index', [
             'requests' => $requests->get(), 
         ]);

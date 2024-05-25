@@ -26,8 +26,8 @@
                 <x-slot:title>
                     التصنيف
                 </x-slot>
-                    <x-dropdown-item type="link" :link="'/admin'">المبادرات التطوعية</x-dropdown-item>
-                    <x-dropdown-item type="link" :link="'/supervisor'">الفرص التطوعية</x-dropdown-item>
+                    <x-dropdown-item type="link" :link="'?classification=initiative'">المبادرات التطوعية</x-dropdown-item>
+                    <x-dropdown-item type="link" :link="'?classification=opportunity'">الفرص التطوعية</x-dropdown-item>
             </x-dropdown>
     
         </div>
@@ -36,9 +36,9 @@
             <x-slot:title>
                 الحالة
             </x-slot>
-                <x-dropdown-item type="link" :link="'/admin'">نشطة</x-dropdown-item>
-                <x-dropdown-item type="link" :link="'/supervisor'">مُعلقة</x-dropdown-item>
-                <x-dropdown-item type="link" :link="'/supervisor'">منتهية</x-dropdown-item>
+                <x-dropdown-item type="link" :link="'?status=accepted'">مقبوله</x-dropdown-item>
+                <x-dropdown-item type="link" :link="'?status=pending'">مُعلقة</x-dropdown-item>
+                <x-dropdown-item type="link" :link="'?status=rejected'">مرفوضه</x-dropdown-item>
         </x-dropdown>
 
     </div>

@@ -8,7 +8,7 @@
                 <a 
                 href="/supervisor/request/create" 
                 class="border border-indigo-500 rounded-md my-4 py-2 px-5 hover:bg-indigo-500 hover:text-gray-100 duration-150">
-                طلب مبادرة تطوعية
+                    طلب فرصة/مبادرة تطوعية
                 </a>
     
             </div>
@@ -29,11 +29,11 @@
                 <x-table.td>{{ $request->classification }}</x-table.td>
                 <x-table.td>
                     <button class="
-                            {{ $request->status->name === 'مرفوضة' ? ' bg-red-300 ' : ''}}
-                            {{ $request->status->name === 'قيد الانتظار' ? ' bg-orange-300 ' : '' }}
-                            {{ $request->status->name === 'مقبولة' ? 'bg-emerald-500 ' : '' }}
+                            {{ $request->status === 'rejected' ? ' bg-red-300 ' : ''}}
+                            {{ $request->status === 'pending' ? ' bg-orange-300 ' : '' }}
+                            {{ $request->status === 'accepted' ? 'bg-emerald-500 ' : '' }}
                             px-2 py-1 text-md text-white rounded-md cursor-text">
-                            {{ $request->status->name }}
+                            {{ $request->status }}
                         </button>
                 </x-table.td>
                 <x-table.td>  <a

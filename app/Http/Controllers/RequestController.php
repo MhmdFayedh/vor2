@@ -42,7 +42,7 @@ class RequestController extends Controller
      * Store function will store the data and return redirect with flash masg | POST
      * @return redirect    
      */
-    public function store()
+    public function store(Request $request)
     {
         $attributes = request()->validate([
             'name' => ['required'],
@@ -59,43 +59,54 @@ class RequestController extends Controller
             'start_time' => ['required' ,'date_format:H:i'],
             'finished_time' => ['required', 'date_format:H:i' , 'after:start_time'],
             'volunteers_number' => ['required'],
-            'facility_name' => ['required'],
+            'facility_name' => ['required', 'string'],
             'department' => ['required'],
         ]);
 
 
-        $request = ModelsRequest::create([
-            'user_id' => auth()->id(),
-            'name' => $attributes['name'],
-            'type' => $attributes['type'],
-            'classification' => $attributes['classification'],
-            'duration' => $attributes['duration'],
-            'external_side' => $attributes['external_side'],
-            'area' => $attributes['area'],
-            'profession' => $attributes['profession'],
-            'explained' => $attributes['explained'],
-            'volunteers_role' => $attributes['volunteers_role']
-        ]);
-        
-            Facility::create([
-            'facility_name' => $attributes['facility_name'],
-            'department' => $attributes['department'],
-            'request_id' => $request->id
+        \DB::transaction(function () use ($attributes) {
+
+            $request = ModelsRequest::create([
+                'user_id' => auth()->id(),
+                'name' => $attributes['name'],
+                'type' => $attributes['type'],
+                'classification' => $attributes['classification'],
+                'duration' => $attributes['duration'],
+                'external_side' => $attributes['external_side'],
+                'area' => $attributes['area'],
+                'profession' => $attributes['profession'],
+                'explained' => $attributes['explained'],
+                'volunteers_role' => $attributes['volunteers_role'],
+                'facility_name' => $attributes['facility_name'],
+                'department' => $attributes['department'],
+                'start_date' => $attributes['start_date'],
+                'finished_date' => $attributes['finished_date'],
+                'start_time' => $attributes['start_time'],
+                'finished_time' => $attributes['finished_time'],
+                'volunteers_number' => $attributes['volunteers_number'],
             ]);
 
+            // Facility::create([
+            //     'facility_name' => $attributes['facility_name'],
+            //     'department' => $attributes['department'],
+            //     'request_id' => $request->id
+            //     ]);
 
-            Schedule::create([
-            'start_date' => $attributes['start_date'],
-            'finished_date' => $attributes['finished_date'],
-            'start_time' => $attributes['start_time'],
-            'finished_time' => $attributes['finished_time'],
-            'volunteers_number' => $attributes['volunteers_number'],
-            'request_id' => $request->id
-        ]);
+                
+            // Schedule::create([
+            //     'start_date' => $attributes['start_date'],
+            //     'finished_date' => $attributes['finished_date'],
+            //     'start_time' => $attributes['start_time'],
+            //     'finished_time' => $attributes['finished_time'],
+            //     'volunteers_number' => $attributes['volunteers_number'],
+            //     'request_id' => $request->id
+            // ]);
+            
+            Status::create([
+                'request_id' => $request->id
+            ]);
+        });
 
-        Status::create([
-            'request_id' => $request->id
-        ]);
 
         return redirect('/supervisor')->with('success', 'تم رفع الطلب بنجاح، يمكنك النظر لحالة الطلب من خلال صفحة متابعة الطلب');
     }

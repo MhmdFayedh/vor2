@@ -18,6 +18,7 @@ class UserController extends Controller
     {
 
         $users =  User::latest();
+
         if(request('search')){
             $users->where('email', 'like', '%' . request('search') . '%');
         }

@@ -16,7 +16,7 @@ class="bg-gradient-to-r from-[#453a77] to-[#009b72] shadow-2xl text-gray-200 py-
                 <x-dropdown-item type="link" :link="'/admin'">لوحة التحكم</x-dropdown-item>
             @endcan
             @can('supervisor')
-                <x-dropdown-item type="link" :link="'/supervisor'">صفحة المشرفين<</x-dropdown-item>
+                <x-dropdown-item type="link" :link="'/supervisor'">صفحة المشرفين</x-dropdown-item>
             @endcan
             <x-dropdown-item type="link" :link="'/profile'">ملف التعريف</x-dropdown-item>
             <x-dropdown-item type="form" :action="'/logout'"> تسجيل الخروج</x-dropdown-item>
