@@ -1,13 +1,13 @@
 <x-layout>
     <x-navbar/>
     
-    <div class=" container mx-auto mt-10">
+    <div class=" container mx-auto mt-10 h-[80vh] ">
         <div class="flex justify-between items-center">
-            <h1 class="text-xl my-3">الطلبات السابقة</h1>
+            <h1 class="text-2xl my-3 mr-6 text-center font-semibold text-[#286275]">الطلبات السابقة</h1>
             <div class="flex gap-4">
                 <a 
                 href="/supervisor/request/create" 
-                class="border border-indigo-500 rounded-md my-4 py-2 px-5 hover:bg-indigo-500 hover:text-gray-100 duration-150">
+                class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#009b72] text-lg font-semibold text-[#286275] ml-8">
                     طلب فرصة/مبادرة تطوعية
                 </a>
     
@@ -35,16 +35,26 @@
                             px-2 py-1 text-md text-white rounded-md cursor-text">
                             {{ $request->status }}
                         </button>
+
+
                 </x-table.td>
+
+
                 <x-table.td>  <a
                     href="/request/{{ $request->id }}" 
-                    class="px-2 py-3 bg-indigo-500 text-md text-white rounded-md ">
+                    class="px-2 py-3 bg-[#3d4575] text-white rounded-md hover:bg-white hover:text-[#3d4575] ">
                     تفاصيل الطلب
                     </a>
         </x-table.td>
             </x-table.tbody>
             @endforeach
         </x-table.table>
+<div class="text-4xl text-center mt-24">
+
+    <h2>لا يوجد طلبات سابقة</h2>
+
+</div>
+
     </div>
     
         

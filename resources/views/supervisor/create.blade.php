@@ -2,19 +2,17 @@
     <x-navbar/>
         <main class="container mx-auto p-20">
             <section class="flex justify-center">
-                <form method="POST" action="/supervisor/request" class="border rounded-lg py-20 px-5 w-1/2">
+                <form method="POST" action="/supervisor/request" class="border border-gray-200 rounded-lg py-20 px-5 w-1/2 bg-white ">
                     @csrf
 
                     @if ($errors->any())
-                    <div class=" text-xl text-red-600">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+
+
                     @endif
-                    <x-form.input title="أسم الطلب" name="name"/>
+
+                    <h1 class="text-2xl font-semibold text-[#286275] text-center m-1">طلب فرصة/مبادرة تطوعية  </h1>
+                    <x-form.input title="أسم الطلب" class="text-red-900"  name="name"/>
+                    
 
                     <x-form.select name="type" title="نوع الطلب"> 
                         
@@ -33,7 +31,7 @@
                         <option value="opportunity">فرصة تطوعية</option>
                     </x-form.select>
 
-                    <x-form.input title="الجهة الخارجية" name="external_side"/>
+                    <x-form.input title="الجهة الخارجية" name="external_side" />
 
                     <x-form.input title="المكان" name="area"/>
 
@@ -57,11 +55,20 @@
 
                     <x-form.textarea name="volunteers_role" title="أدوار المتطوعين"/>
 
+                    <div class=" text-sm text-red-400">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
                     <div class="mt-6 flex justify-center">
-                        <button type="submit" class="border border-indigo-500 py-2 px-10 rounded hover:bg-indigo-500 hover:text-white duration-150">
+                        
+                        <button type="submit" class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#009b72] text-lg font-semibold text-[#286275] ml-8">
                             رفع الطلب
                         </button>
-                    </div>
+                    </div>  
                 </form>
             <section class="flex justify-center">
         </main>

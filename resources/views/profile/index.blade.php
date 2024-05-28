@@ -5,12 +5,12 @@
         <div class="flex justify-center items-center">
             
             <div class="flex flex-col items-center">
-                <div class="flex gap-3">
-                    <h1 class="text-2xl text-center py-4">معلومات الحساب</h1>
+                <div class="flex gap-5">
+                    <h1 class="py-10 text-4xl text-center text-[#177a74] font-semibold ">معلومات الحساب</h1>
                     <a 
                     class="flex flex-col items-center justify-center hover:text-gray-600 text-gray-400 duration-150"
                     href="profile/edit">
-                        <span class="material-symbols-rounded">
+                        <span class="material-symbols-rounded bg-gray-300 text-white rounded-full p-2 ">
                             edit
                         </span>
                     </a>
@@ -19,33 +19,35 @@
                     <img 
                     style="width: 100px; height: 100px"
                     src="{{ asset('storage/' . $user->profile->picture) }}" 
-                    alt="User Picture"
-                    class=" rounded-full"
+                    alt=""
+                    class=" rounded-full bg-gray-200 text-gray-900 text-sm border border-gray-700 "
                     >
                 </div>
-                <div class="col-span-3 text-xl">
+                <div class="col-span-3 text-2xl text-[#374e75] font-semibold m-2">
                     {{ $user->name }}
                 </div>
-                <div class=" col-span-3 text-xl">
+                <div class=" col-span-3 text-2xl m-1 ">
                     {{ $user->email }}
                 </div>
-                <div>
+                <div  class=" col-span-3 text-xl m-1 text-[#374e75] font-bold">
                     {{ $user->profile->job_title }}
                 </div>
                 <div>
-                    السيرة الذاتية
+                    <p class=" col-span-3 text-xl m-1 font-semibold">
+                        السيرة الذاتية
+                    </p>
                     @if (!$user->profile->cv)
-                        <p class="text-sm text-red-500">لا توجد سيرة ذاتية</p>                        
+                        <p class="text-xl text-red-400 font-semibold">لا توجد سيرة ذاتية</p>                        
                     @else
                     <a href="{{ asset('storage/' . $user->profile->cv) }}">
-                        <span class="material-symbols-rounded text-sm text-gray-400 hover:gray-600">
+                        <span class="material-symbols-rounded text-gray-400 hover:gray-600 text-xl mr-12 ">
                             open_in_new
                         </span>
                     </a>
                     @endif
                 </div>
 
-                <div>
+                <div class="text-xl">
                     {{ $user->profile->region }}، {{ $user->profile->city }}
                 </div>
                 
@@ -53,7 +55,7 @@
                 <div class="mt-5">
                     <a 
                     href="/password/ensure"
-                    class=" bg-indigo-500 text-white rounded hover:bg-indigo-600 duration-150 py-2 px-1"
+                    class=" bg-white text-[#374e75]  border border-gray-700 font-semibold rounded hover:text-white duration-100 hover:bg-[#009b72] hover:border-white py-2 px-4"
                     >
                         تعديل الرمز السري
                     </a>
