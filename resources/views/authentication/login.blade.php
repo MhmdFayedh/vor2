@@ -2,10 +2,12 @@
 <x-navbar/>
 <main class="container mx-auto px-5 md:p-20">
     <section class="flex justify-center">
-        <form method="POST" action="/login" class="border rounded-lg py-20 px-5 w-full md:w-1/2">
+        <form method="POST" action="/login" class="border rounded-lg py-20 px-5 w-full md:w-1/2 bg-white">
+            <h4 class="text-center font-bold text-3xl text-[#286275]">تسجيل الدخول</h4>
+
             @csrf
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="email">
+                    <label class="block mb-2 uppercase text-xl text-[#177a74] font-semibold" for="email">
                         البريد الالكتروني
                     </label>
                     <input class="border border-gray-300 py-2 w-full rounded" type="text" name="email" id="email" required>
@@ -15,7 +17,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="password">
+                    <label class="block mb-2 uppercase text-xl text-[#177a74] font-semibold " for="password">
                         الرقم السري
                     </label>
                     <input class="border border-gray-300 py-2 w-full rounded" type="password" name="password" id="password" required>
@@ -24,7 +26,7 @@
                     @enderror
                 </div>
                 <div class="mb-6 flex justify-center">
-                    <button type="submit" class="border border-indigo-500 rounded-md py-2 px-10 hover:bg-indigo-500 hover:text-gray-100 duration-100">تسجيل دخولك</button>
+                    <button type="submit" class=" text-[#286275] border border-white-900 rounded-md py-2 px-10  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold">تسجيل دخول</button>
                 </div>
                 
             </form>

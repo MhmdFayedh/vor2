@@ -9,9 +9,17 @@ class="bg-gradient-to-r from-[#453a77] to-[#009b72] shadow-2xl text-gray-200 py-
         </div>
         @auth
         <x-dropdown>
+
+
+            
             <x-slot:title>
-                <img src="{{ asset('storage/' . auth()->user()->profile->picture) }}" alt="" class="w-10 h-10 rounded-full object-cover">
+                
+                <img src="{{ asset('storage/' . auth()->user()->profile->picture) }}" alt="logo" class="w-10 h-10 rounded-full object-cover border border-white">
             </x-slot>
+
+            
+
+
             @can('admin')
                 <x-dropdown-item type="link" :link="'/admin'">لوحة التحكم</x-dropdown-item>
             @endcan
@@ -34,12 +42,12 @@ class="bg-gradient-to-r from-[#453a77] to-[#009b72] shadow-2xl text-gray-200 py-
 
             </li>
             <li>
-                <a href="/login" class="hidden md:block border border-[#009b72] py-2 px-10 rounded-md hover:bg-[#009b72] duration-150">
+                <a href="/login" class="hidden md:block border border-[#187873] py-2 px-10 rounded-md hover:bg-[#009b72] duration-150">
                     تسجيل دخول
                 </a>
             </li>
             <li >
-                <a href="/register" class="hidden md:block  border border-[#009b72] py-2 px-10 rounded-md hover:bg-[#009b72] duration-150">
+                <a href="/register" class="hidden md:block  border border-[#187873] py-2 px-10 rounded-md hover:bg-[#009b72] duration-150">
                     تسجيل حساب
                 </a>
             </li>
