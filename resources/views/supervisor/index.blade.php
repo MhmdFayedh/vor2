@@ -3,11 +3,18 @@
     
     <div class=" container mx-auto mt-10 h-[80vh] ">
         <div class="flex justify-between items-center">
-            <h1 class="text-2xl my-3 mr-6 text-center font-semibold text-[#286275]">الطلبات السابقة</h1>
+                <h1 class="text-2xl my-3 mr-6 text-center font-semibold text-[#286275]">الطلبات</h1>
+                {{-- <x-dropdown>
+                    <x-slot:title>
+                        التصنيف
+                    </x-slot>
+                        <x-dropdown-item type="link" :link="'?classification=initiative'">المبادرات التطوعية</x-dropdown-item>
+                        <x-dropdown-item type="link" :link="'?classification=opportunity'">الفرص التطوعية</x-dropdown-item>
+                </x-dropdown>    --}}
             <div class="flex gap-4">
                 <a 
                 href="/supervisor/request/create" 
-                class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#009b72] text-lg font-semibold text-[#286275] ml-8">
+                class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#187873] text-lg font-semibold text-[#286275] ml-8">
                     طلب فرصة/مبادرة تطوعية
                 </a>
     
@@ -49,11 +56,12 @@
             </x-table.tbody>
             @endforeach
         </x-table.table>
-<div class="text-4xl text-center mt-24">
 
-    <h2>لا يوجد طلبات سابقة</h2>
-
-</div>
+        @if (count($requests) == 0)
+        <div class="text-4xl text-center mt-24">
+            <h2>لا يوجد طلبات سابقة</h2>
+        </div>
+        @endif
 
     </div>
     

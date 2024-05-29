@@ -65,7 +65,7 @@
 
                     <div class="mt-6 flex justify-center">
                         
-                        <button type="submit" class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#009b72] text-lg font-semibold text-[#286275] ml-8">
+                        <button type="submit" class=" my-4 py-2 px-5 duration-150 border border-[#286275] rounded-md py-2 px-10  hover:text-white hover:bg-[#187873] text-lg font-semibold text-[#286275] ml-8">
                             رفع الطلب
                         </button>
                     </div>  

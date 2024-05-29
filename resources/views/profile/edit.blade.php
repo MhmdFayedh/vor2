@@ -11,7 +11,7 @@
 
                 <div class="mb-6">
                     <img style=""
-                         src="{{ asset('storage/' . $user->profile->picture) }}"
+                    src="{{ $user->profile->picture ? asset('storage/' . $user->profile->picture) : 'https://media.discordapp.net/attachments/1237107768910151700/1245428598320533574/IMG_2945.jpg?ex=6658b744&is=665765c4&hm=8479e5ff42f9b3a2cb54f175c3bc990c5f376bd9b629d3354f9484c8ad3cac7d&=&format=webp'}}"
                          class="w-20 h-20 mb-1 rounded-full object-cover border border-gray-900">
                     <span class="text-lg block mb-2 font-bold text-lg text-[#177a74] font-semibold">الصورة الشخصية</span>
                     <input class="border border-gray-400 py-2 w-full rounded-md bg-gray-50" type="file" name="picture" id="picture">
@@ -83,7 +83,7 @@
                     </div>
     
                     <div class="mb-6 flex justify-center">
-                        <button type="submit" class="border border-white-900 rounded-md py-2 px-10 p-2  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold text-[#286275]">تعديل</button>
+                        <button type="submit" class="border border-white-900 rounded-md py-2 px-10 p-2  hover:text-white duration-100 hover:bg-[#187873] text-lg font-semibold text-[#286275]">تعديل</button>
                     </div>
                  
             </form>

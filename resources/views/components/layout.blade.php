@@ -15,56 +15,7 @@
     <title>VOR</title>
 </head>
 <body class="">
-    {{ $slot }}    
-    {{-- <footer class="pt-5">
-        <div class="flex justify-center items-center  flex-col bg-slate-200 text-gray-500">
-            <p>هذا الموقع صُنع لأعادة مشروع قديم لأختبار مهاراتي</p>
-            <p> بواسطة 
-                <a href="https://mofayedh.com" class=" hover:underline">محمد الفايض</a>
-            </p>
-        </div>
-        </footer> --}}
-
-
-{{-- <!-- Footer -->
-<footer class="bg-gray-900 text-white py-8">
-    <!-- Container -->
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Copyright -->
-      <div class="text-center">
-        <!-- Copyright Text -->
-        <p>حقوق الملكية © 2023 موقع مشروع اختبار المهارات</p>
-      </div>
-      <!-- Social Links -->
-      <div class="flex space-x-4">
-        <!-- GitHub Link -->
-        <a href="https://github.com/mofayedh" class="text-gray-400 hover:text-white">
-          <!-- GitHub Icon -->
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <!-- Icon Path -->
-          </svg>
-        </a>
-        <!-- LinkedIn Link -->
-        <a href="https://www.linkedin.com/in/mofayedh/" class="text-gray-400 hover:text-white">
-          <!-- LinkedIn Icon -->
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <!-- Icon Path -->
-          </svg>
-        </a>
-        <!-- YouTube Link -->
-        <a href="https://www.youtube.com/channel/UCcfZY2nY4DhI7vqLfsOZzVg" class="text-gray-400 hover:text-white">
-          <!-- YouTube Icon -->
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-            <!-- Icon Path -->
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer> --}}
-
-
-
-
+    {{ $slot }}
   <!-- Footer -->
 <footer class="bg-[#187873] text-white py-8">
     <div class="container mx-auto flex justify-between items-center ">

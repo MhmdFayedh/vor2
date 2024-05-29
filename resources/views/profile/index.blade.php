@@ -18,7 +18,7 @@
                 <div class="">
                     <img 
                     style="width: 100px; height: 100px"
-                    src="{{ asset('storage/' . $user->profile->picture) }}" 
+                    src="{{ $user->profile->picture ? asset('storage/' . $user->profile->picture) : 'https://media.discordapp.net/attachments/1237107768910151700/1245428598320533574/IMG_2945.jpg?ex=6658b744&is=665765c4&hm=8479e5ff42f9b3a2cb54f175c3bc990c5f376bd9b629d3354f9484c8ad3cac7d&=&format=webp'}}"
                     alt=""
                     class=" rounded-full bg-gray-200 text-gray-900 text-sm border border-gray-700 "
                     >
@@ -48,14 +48,16 @@
                 </div>
 
                 <div class="text-xl">
-                    {{ $user->profile->region }}، {{ $user->profile->city }}
+                   @if ($user->profile->region && $user->profile->city)
+                   {{ $user->profile->region }}، {{ $user->profile->city }}
+                   @endif
                 </div>
                 
 
                 <div class="mt-5">
                     <a 
                     href="/password/ensure"
-                    class=" bg-white text-[#374e75]  border border-gray-700 font-semibold rounded hover:text-white duration-100 hover:bg-[#009b72] hover:border-white py-2 px-4"
+                    class=" bg-white text-[#374e75]  border border-gray-700 font-semibold rounded hover:text-white duration-100 hover:bg-[#187873] hover:border-white py-2 px-4"
                     >
                         تعديل الرمز السري
                     </a>

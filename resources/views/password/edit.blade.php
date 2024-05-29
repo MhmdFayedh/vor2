@@ -26,7 +26,7 @@
                     
     
                     <div class="mb-6 flex justify-center">
-                        <button type="submit" class=" text-[#286275] border border-white-900 rounded-xl py-2 px-10  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold">تعديل</button>
+                        <button type="submit" class=" text-[#286275] border border-white-900 rounded-xl py-2 px-10  hover:text-white duration-100 hover:bg-[#187873] text-lg font-semibold">تعديل</button>
                     </div>
             </form>
         </section>

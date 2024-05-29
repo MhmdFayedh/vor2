@@ -14,7 +14,7 @@ class="bg-gradient-to-r from-[#453a77] to-[#009b72] shadow-2xl text-gray-200 py-
             
             <x-slot:title>
                 
-                <img src="{{ asset('storage/' . auth()->user()->profile->picture) }}" alt="logo" class="w-10 h-10 rounded-full object-cover border border-white">
+                <img src="{{ auth()->user()->profile->picture ? asset('storage/' . auth()->user()->profile->picture) : 'https://media.discordapp.net/attachments/1237107768910151700/1245428598320533574/IMG_2945.jpg?ex=6658b744&is=665765c4&hm=8479e5ff42f9b3a2cb54f175c3bc990c5f376bd9b629d3354f9484c8ad3cac7d&=&format=webp'}}" alt="logo" class="w-10 h-10 rounded-full object-cover border border-white">
             </x-slot>
 
             

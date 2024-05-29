@@ -14,10 +14,14 @@ class SupervisorController extends Controller
      */
     public function index(ModelsRequest $requests)
     {
-        
-        
-        
-       
+
+        if(request('classification') === 'initiative'){
+            $requests->where('classification', '=', 'initiative');
+         };
+ 
+         if(request('classification') === 'opportunity'){
+             $requests->where('classification', '=', 'opportunity');
+          };
 
         return view('supervisor.index', [
             'requests' => $requests->where('user_id', auth()->id())->get()
