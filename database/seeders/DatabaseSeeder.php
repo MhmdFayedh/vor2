@@ -23,11 +23,17 @@ class DatabaseSeeder extends Seeder
             'password' => 'MohammedFayedh010101',
             'role' => 'admin',
         ]);
-
         \App\Models\User::create([
             'name' => 'محمد الزبني',
             'email' => 'am.alzubayni@neogen.com',
             'password' => 'MohammedFayedh010101',
+            'role' => 'admin',
+        ]);
+
+        \App\Models\User::create([
+            'name' => 'مريم بكرين',
+            'email' => 'am.bkrin@neogen.com',
+            'password' => 'MrimBkrin010101',
             'role' => 'admin',
         ]);
 
@@ -58,6 +64,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'مشاعل',
             'email' => 'sm.m@neogen.com',
             'password' => 'Mashael010101',
+            'role' => 'supervisor',
+        ]);
+
+        \App\Models\User::create([
+            'name' => 'مريم بكرين',
+            'email' => 'sm.bkrin@neogen.com',
+            'password' => 'MrimBkrin010101',
             'role' => 'supervisor',
         ]);
 
