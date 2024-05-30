@@ -3,18 +3,18 @@
 
         
     {{-- Main Contents --}}
-    <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6 ">
         <div class="flex justify-center items-center">
             <form action="" method="GET" class=" flex items-center">
                 <input 
                 type="text" 
                 name="search" 
-                class=" border border-gray-400 py-1 px-3 rounded-md" 
+                class=" border border-gray-400 py-1 px-3 rounded-md m-2 " 
                 placeholder="أبحث عن طلب"
                 value="{{ request('search') }}"
                 >
                 <button type="submit">
-                    <span class="material-symbols-rounded cursor-pointer flex items-center" x-on:click="open = !open">
+                    <span class="material-symbols-rounded cursor-pointer flex items-center bg-gray-400 text-white rounded-full p-1" x-on:click="open = !open">
                         search
                     </span>
                 </button>
@@ -24,6 +24,7 @@
         <div>
             <x-dropdown>
                 <x-slot:title>
+                
                     التصنيف
                 </x-slot>
                     <x-dropdown-item type="link" :link="'?classification=initiative'">المبادرات التطوعية</x-dropdown-item>
@@ -42,7 +43,7 @@
         </x-dropdown>
 
     </div>
-    <div class="hidden lg:block mt-10">
+    <div class=" lg:block mt-1  ">
         <x-table.table>
             <x-table.thead>
                 <x-table.th>#</x-.table.th>
@@ -65,7 +66,7 @@
                 <x-table.td>{{ $request->id }}</x-table.td>
                 <x-table.td>
                     <a
-                    class="border-2 border-transparent hover:border-b-blue-500" 
+                    class="border-2 border-transparent hover:text-gray-500  " 
                     href="/admin/requests/{{ $request->id }}">
                         {{ $request->name }}
                     </a>
@@ -87,11 +88,11 @@
         </x-table.table>    
     </div>
 
-    <div class="lg:hidden flex flex-col gap-3 text-center p-10 ">
+    <div class="lg:hidden flex flex-col gap-3 text-center p-10  ">
         @foreach ($requests as $request)
-        <div class="border mt-6 shadow p-5">
+        <div class="border mt-6 shadow p-5 bg-white ">
            
-            <h1 class="text-xl"><span class="text-xs text-gray-400">{{ $request->id }}# </span> {{ $request->name }}</h1>
+            <h1 class="text-xl"><span class="text-lg text-gray-400 ">{{ $request->id }}# </span> {{ $request->name }}</h1>
 
             <p class="mt-2">{{ $request->classification  }}</p>
 
@@ -99,7 +100,7 @@
             <div class="flex justify-around items-center my-4 ">
 
                 <a 
-                class="py-1 px-2 bg-indigo-500 text-white rounded"
+                class="py-1 px-2 bg-[#3b4775] text-white rounded"
                 href="/admin/requests/{{ $request->id }}">انظر للطلب</a>
                 <button 
                 class="

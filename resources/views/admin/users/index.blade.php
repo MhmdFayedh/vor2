@@ -1,21 +1,24 @@
 <x-admin-layout>
-    
-
-        
     {{-- Main Contents --}}
-    <div class="flex justify-center items-center gap-3 lg:gap-10 mt-10">
+    <div class="flex justify-center items-center gap-3 lg:gap-10 ">
         <a 
-        class="flex flex-col items-center justify-center hover:text-gray-600 text-gray-400 duration-150"
+        class="flex flex-col items-center justify-center hover:text-[#429e81] text-[#736896] duration-150"
         href="/admin/users/create">
-            <span class="material-symbols-rounded">
-                person_add
-            </span>
-            
+
+        <div class="flex gap-1">
+
+                <p>إضافة مستخدم جديد</p>
+                <span class="material-symbols-rounded rounded-full  ">
+                    person_add
+                </span>
+        </div>  
         </a>
-            <form action="" method="GET" class=" lg:w-96 flex justify-center items-center">
-                <input type="text" name="search" class=" border border-b-gray-400 py-1 px-3 rounded-md w-full" placeholder="إبحث بواسطة الايميل">
+
+            <form action="" method="GET" class=" lg:w-96 flex justify-center items-center gap-3">
+                <input type="text" name="search" class=" border border-b-gray-400 py-1 px-3 rounded-md w-full bg-white" placeholder="إبحث بواسطة الايميل">
                 <button type="submit">
-                    <span class="material-symbols-rounded cursor-pointer flex items-center" x-on:click="open = !open">
+
+                    <span class="material-symbols-rounded cursor-pointer flex items-center bg-[#736896] rounded-lg text-white hover:bg-[#429e81]" x-on:click="open = !open">
                         search
                     </span>
                 </button>
@@ -54,7 +57,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-rose-500 text-md rounded-md">
-                            <span class="material-symbols-rounded">
+                            <span class="material-symbols-rounded text-gray-900 hover:text-red-400">
                                 delete
                             </span>
                         </button>

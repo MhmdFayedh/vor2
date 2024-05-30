@@ -1,8 +1,8 @@
 <x-admin-layout>
-
+   
     
-    <div class=" mt-24 w-full md:w-1/2">
-        <div class="mb-2 flex items-center justify-between">
+    <div class=" md:w-1/2 bg-white border border-gray-300 rounded-xl shadow-lg ">
+        <div class="mb-2 flex items-center justify-between p-2 ">
             <h1 class="text-xl font-bold"> الطلب {{ $request->name }}</h1>
         </div>
     
@@ -12,7 +12,7 @@
             @csrf
             @method('PUT')
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-md text-gray-700 " for="status">
+                <label class="block mb-2  font-bold text-md text-gray-700 " for="status">
                     قبول أم رفض الطلب
                 </label>
                 <select 
@@ -31,7 +31,7 @@
             
 
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-md text-gray-700 " for="reason">
+                <label class="block mb-2 font-bold text-md text-gray-700 " for="reason">
                     قبول أم رفض الطلب
                 </label>
 
@@ -48,7 +48,7 @@
             </div>
             <div class=" flex justify-center">
                 <button 
-                class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-400 duration-150"
+                class="border border-[#286275] rounded-md py-2 px-10  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold text-[#286275]"
                 type="submit">
                     رفع حالة الطلب
                 </button>

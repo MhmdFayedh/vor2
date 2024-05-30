@@ -3,7 +3,7 @@
     
     <div class=" mt-24 w-full md:w-1/2 p-5">
        <div class="mb-2 flex items-center justify-between">
-            <h1 class="text-xl font-bold">تعديل حساب {{ $user->name }}</h1>
+            <h1 class="text-xl font-bold font-semibold font-bold text-2xl text-[#286275]">تعديل حساب {{ $user->name }}</h1>
        </div>
     
         <form 

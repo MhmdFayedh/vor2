@@ -11,15 +11,16 @@
     @vite('resources/js/app.js')
     <title>VOR</title>
 </head>
+<x-navbar/>
 <body  
     x-data="{
         aside: false 
         }">
     <main class=" relative z-50 lg:grid lg:grid-cols-12 lg:gap-5 lg:p-10 ">
         <header class="flex justify-between mt-2 lg:hidden">
-            <div>
+            <div >
                 <a href="/admin">
-                    <img class="w-12 " src="{{ asset('images/hhc_logo.png') }}" alt="">
+                    <img class="w-12 rounded-full border border-gray-200 bg-white " src="{{ asset('images/hhc_logo.png') }}" alt="lo">
                 </a>
             </div>
 
@@ -59,7 +60,7 @@
                         <a href="{{ route('users.index') }}"
                             class=" {{ request()->routeIs('users*') ? 'text-indigo-500' : '' }}
                             flex flex-col-reverse  text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150 text-xs">
-                            <span class="material-symbols-rounded">
+                            <span class="material-symbols-rounded ">
                                 group
                             </span>
                         </a>
@@ -98,7 +99,7 @@
             </div>
                     <ul class="mt-10 space-y-3">
                         <li>
-                            <a href="{{ route('dashboard') }}"  class="{{ request()->routeIs('dashboard') ? 'bg-indigo-500 text-white ' : '' }}flex justify-between gap-2 w-3/4  lg:w-full text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150">
+                            <a href="{{ route('dashboard') }}"  class="{{ request()->routeIs('dashboard') ? 'bg-[#3e4378] text-white ' : '' }}flex justify-between gap-2 w-3/4  lg:w-full text-gray-500 hover:bg-white hover:text-[#3e4378] shadow-lg rounded-xl py-4 px-2 duration-150">
                                 لوحة التحكم
                                 <span class="material-symbols-rounded">
                                     dashboard
@@ -106,7 +107,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('requests.index') }}" class="{{ request()->routeIs('requests*') ? 'bg-indigo-500 text-white ' : '' }}flex justify-between gap-2 w-3/4 lg:w-full text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150">
+                            <a href="{{ route('requests.index') }}" class="{{ request()->routeIs('requests*') ? 'bg-[#3e4378] text-white ' : '' }}flex justify-between gap-2 w-3/4 lg:w-full text-[#3e4378] rounded-lg py-4 px-2 duration-150 hover:bg-white hover:text-[#3e4378] shadow-lg rounded-xl ">
                                 رؤية جميع الطلبات 
                                 <span class="material-symbols-rounded">
                                     diversity_2
@@ -114,7 +115,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('users.index') }}" class=" {{ request()->routeIs('users*') ? 'bg-indigo-500 text-white ' : '' }}flex justify-between gap-2 w-3/4 lg:w-full text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150">
+                            <a href="{{ route('users.index') }}" class=" {{ request()->routeIs('users*') ? 'bg-[#3e4378] text-white ' : '' }}flex justify-between gap-2 w-3/4 lg:w-full  text-[#3e4378]   rounded-lg hover:bg-white hover:text-[#3e4378] shadow-lg rounded-xl py-4 px-2 duration-150">
                                 أدارة المستخدمين
                                 <span class="material-symbols-rounded">
                                     group
@@ -122,18 +123,11 @@
                             </a>
                         </li>
             
-                        <li>
-                            <a href="" class="flex justify-between gap-2 w-3/4 lg:w-full text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150">
-                                إحصاءات النظام
-                                <span class="material-symbols-rounded">
-                                    insights
-                                </span>
-                            </a>
-                        </li>
+            
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf
-                                <button class="flex justify-between gap-2 w-3/4 lg:w-full text-gray-500 hover:bg-indigo-500 hover:text-white rounded-lg py-4 px-2 duration-150">
+                                <button class="flex justify-between gap-2 w-3/4 lg:w-full rounded-lg text-[#3e4378] shadow-lg rounded-xl hover:bg-[#3e4378] hover:text-white py-4 px-2 duration-150">
                                     تسجيل الخروج
                                     <span class="material-symbols-rounded">
                                         logout
