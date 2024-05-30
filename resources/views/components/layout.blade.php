@@ -7,6 +7,7 @@
     <style>html{visibility: hidden;opacity:0;}</style>
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     @vite('resources/css/app.css')
@@ -65,6 +66,36 @@
 <div id="loader" class="loader">
     <img src="{{ asset('images/hhc_logo.png') }}" alt="">
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#start_time", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: false
+        });
+
+        flatpickr("#finished_time", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: false
+        });
+
+        document.getElementById('classification').addEventListener('change', function() {
+          let externalSide = document.getElementById('external_side');
+          let area = document.getElementById('area');
+          if (this.value === 'initiative') {
+              console.log(this.value)
+              externalSide.classList.remove('hidden');
+              area.classList.remove('hidden');
+          } else {
+              externalSide.classList.add('hidden');
+              area.classList.add('hidden');
+          }
+      });
+    </script>
 </body>
 @if (session('success'))
     <div class="fixed bottom-6 right-6 bg-[#009b72] py-3 px-3 rounded-xl select-none ">

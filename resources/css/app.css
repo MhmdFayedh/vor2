@@ -10,7 +10,9 @@ body{
     background-image: url("../../public/images/vor_background.png");
 }
 
-
+.hidden {
+    display: none;
+}
 
 .loader {
     position: fixed;

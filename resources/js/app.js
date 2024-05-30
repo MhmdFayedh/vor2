@@ -13,5 +13,19 @@ close.addEventListener('click', () => {
     sideBar.classList.add('hidden');
 });
 
-//Loader functionality
 
+// document.getElementById('classification').addEventListener('change', function() {
+//     console.log(this.value);
+//     let externalSide = document.getElementById('external_side');
+//     let area = document.getElementById('area');
+//     if (this.value === 'opportunity') {
+//         console.log(this.value)
+//         externalSide.classList.remove('hidden');
+//         area.classList.remove('hidden');
+//     } else {
+//         externalSide.classList.add('hidden');
+//         area.classList.add('hidden');
+//     }
+// });
+
+// console.log(document.getElementById('classification'));
