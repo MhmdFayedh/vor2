@@ -1,20 +1,22 @@
+<x-navbar/>
+
 <x-admin-layout>
 
-    <div class=" mt-28">
         <div class="w-full">
-            <h1 class="text-xl font-bold mb-3">أنشاء مستخدم جديد</h1>
             <form 
             action="/admin/users" 
             method="POST"
-            class="w-3/4 border py-2 px-2 shadow rounded"
+            class="w-3/4 border border-gray-200 bg-white px-4 shadow rounded"
             >
             @csrf
                 <div class="mb-6">
-                    <label class="block mb-2  font-bold text-md text-gray-700 " for="name">
+                    <h1 class="font-bold text-center font-bold text-2xl text-[#286275] m-6">أنشاء مستخدم جديد</h1>
+
+                    <label class="block mb-2  text-xl text-[#177a74] font-semibold mb-2 " for="name">
                         الاسم
                     </label>
                     <input 
-                    class="border border-gray-400 py-2 px-2 w-full rounded" 
+                    class="border border-gray-200 py-2 px-2 w-full rounded bg-white" 
                     type="text" 
                     name="name" 
                     id="name" 
@@ -25,11 +27,11 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2  font-bold text-md text-gray-700 " for="email">
+                    <label class="block mb-2  text-xl text-[#177a74] font-semibold mb-2 " for="email">
                         الايميل
                     </label>
                     <input 
-                    class="border border-gray-400 py-2 px-2 w-full rounded" 
+                    class="border border-gray-200 py-2 px-2 w-full rounded bg-white" 
                     type="email" 
                     name="email" 
                     id="email" 
@@ -40,11 +42,11 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2  font-bold text-md text-gray-700 " for="passwordemail">
+                    <label class="block mb-2  text-xl text-[#177a74] font-semibold mb-2" for="passwordemail">
                         الرمز
                     </label>
                     <input 
-                    class="border border-gray-400 py-2 px-2 w-full rounded" 
+                    class="border border-gray-200 py-2 px-2 w-full rounded bg-white" 
                     type="password" 
                     name="password" 
                     id="password" 
@@ -55,13 +57,13 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2  font-bold text-md text-gray-700 " for="role">
+                    <label class="block text-xl text-[#177a74] font-semibold mb-2 " for="role">
                         دور المستخدم
                     </label>
                     <select 
                     name="role" 
                     id="role"
-                    class="border border-gray-400 py-2 px-2 w-full rounded"
+                    class="border border-gray-200 py-2 px-2 w-full rounded  bg-white"
                     >
                         <option value=""></option>
                         <option value="admin">مدير نظام</option>
@@ -76,7 +78,7 @@
                 <div class="flex justify-center">
                     <button 
                     type="submit"
-                    class="py-2 px-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded duration-150"
+                    class=" text-[#286275] border border-white-900 rounded-md py-2 px-10 mb-5  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold"
                     >
                         انشاء المستخدم
                     </button>
@@ -85,5 +87,5 @@
             </form>
         </div>
         
-    </div>
+
 </x-admin-layout>

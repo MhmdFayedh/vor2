@@ -1,22 +1,23 @@
 <x-admin-layout>
 
-    
-    <div class=" mt-24 w-full md:w-1/2 p-5">
+{{--     
+    <div class=" mt-24 ">
        <div class="mb-2 flex items-center justify-between">
-            <h1 class="text-xl font-bold">تعديل حساب {{ $user->name }}</h1>
-       </div>
+       </div> --}}
     
         <form 
-        class="border shadow py-2 px-2"
+        class="border shadow-xl border-gray-200 bg-white p-3 py-2 px-2 w-[50vw] h-[73vh] m-9"
         action="/admin/users/{{ $user->id }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="name">
+                <h1 class=" mt-6 text-center font-bold text-2xl text-[#286275] ">تعديل حساب {{ $user->name }}</h1>
+
+                <label class="block mb-2 uppercase text-lg text-[#177a74] font-semibold" for="name">
                     اسم المستخدم
                 </label>
                 <input 
-                class="border border-gray-400 py-2 px-1 w-full" 
+                class=" py-2 px-1 w-full border border-gray-300 py-2 px-2 w-full rounded bg-white"
                 type="text" 
                 name="name" 
                 id="name" 
@@ -29,13 +30,13 @@
             </div>
 
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="role">
+                <label class="block mb-2 uppercase text-lg text-[#177a74] font-semibold " for="role">
                     دور المستخدم
                 </label>
                 <select 
                 name="role" 
                 id="role"
-                class="border border-gray-400 py-2 px-1 w-full"
+                class="border border-gray-300 py-2 px-2 w-full rounded bg-white py-2 px-1 w-full"
                 >
                     <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>مدير نظام</option>
                     <option value="supervisor" {{ $user->role === 'supervisor' ? 'selected' : '' }}>مشرف</option>
@@ -47,11 +48,11 @@
             </div>
 
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="email">
+                <label class="block mb-2 uppercase text-lg text-[#177a74] font-semibold" for="email">
                     بريد المستخدم
                 </label>
                 <input 
-                class="border border-gray-400 py-2 px-1 w-full" 
+                class=" py-2 px-1 w-full border border-gray-300 py-2 px-2 w-full rounded bg-white" 
                 type="text" 
                 name="email" 
                 id="email" 
@@ -63,11 +64,11 @@
             </div>            
 
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700 " for="password">
+                <label class="block mb-2 uppercase text-lg text-[#177a74] font-semibold" for="password">
                     رمز المستخدم
                 </label>
                 <input 
-                class="border border-gray-400 py-2 px-1 w-full" 
+                class=" py-2 px-1 w-full border border-gray-300 py-2 px-2 w-full rounded bg-white" 
                 type="password" 
                 name="password" 
                 id="password"
@@ -79,17 +80,15 @@
                 @enderror
             </div>
 
-            <div>
+            <div class="flex justify-center col">
                 <button 
-                class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-400 duration-150"
+                class="border border-white-900 rounded-md py-2 px-10  hover:text-white duration-100 hover:bg-[#009b72] text-lg font-semibold text-[#286275]"
                 type="submit">
                     تعديل المستخدم
                 </button>
             </div>
+
         </form>  
-        
-        <a href="">
-            تحديث المستخدم
-        </a>
+   
     </div>
 </x-admin-layout>
