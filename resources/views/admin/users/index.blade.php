@@ -14,9 +14,14 @@
         </div>  
         </a>
 
-            <form action="" method="GET" class=" lg:w-96 flex justify-center items-center gap-3">
-                <input type="text" name="search" class=" border border-b-gray-400 py-1 px-3 rounded-md w-full bg-white" placeholder="إبحث بواسطة الايميل">
-                <button type="submit">
+            <form 
+            method="GET"
+            class="lg:w-96 flex justify-center items-center gap-3">
+                <input 
+                type="text" 
+                name="search" 
+                class=" border border-b-gray-400 py-1 px-3 rounded-md w-full bg-white" 
+                placeholder="اسم المستخدم او  البريد الإلكتروني" value="{{ request('search')}}"><button type="submit">
 
                     <span class="material-symbols-rounded cursor-pointer flex items-center bg-[#736896] rounded-lg text-white hover:bg-[#429e81]" x-on:click="open = !open">
                         search
@@ -53,7 +58,13 @@
                 <x-table.td>{{ $user->role }}</x-table.td>
                 <x-table.td>{{ $user->email }}</x-table.td>
                 <x-table.td>
-                    <form action="/admin/users/{{ $user->id }}" method="POST">
+
+                    <x-confirmation-modal deleteRoute="/admin/users/{{ $user->id }}" username="{{ $user->name }}">
+                        <span class="material-symbols-rounded text-gray-900 hover:text-red-400">
+                            delete
+                        </span>
+                    </x-confirmation-modal>
+                    {{-- <form action="/admin/users/{{ $user->id }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-rose-500 text-md rounded-md">
@@ -61,7 +72,7 @@
                                 delete
                             </span>
                         </button>
-                    </form>
+                    </form> --}}
                 </x-table.td>
             </x-table.tbody>
             @endforeach
@@ -83,16 +94,14 @@
                 <a 
                 class="py-1 px-2 bg-indigo-500 text-white rounded"
                 href="/admin/users/{{ $user->id }}">انظر للمستخدم</a>
-                <form action="/admin/users/{{ $user->id }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="text-rose-500 text-md rounded-md">
-                        <span class="material-symbols-rounded">
-                            delete
-                        </span>
-                    </button>
-                </form>
+               <x-confirmation-modal deleteRoute="/admin/users/{{ $user->id }}"/>
             </div>
+
+            <x-confirmation-modal deleteRoute="/admin/users/{{ $user->id }}" username="{{ $user->name }}">
+                <span class="material-symbols-rounded text-gray-900 hover:text-red-400">
+                    delete
+                </span>
+            </x-confirmation-modal> 
            </a>
         </div>
         @endforeach

@@ -20,7 +20,8 @@ class UserController extends Controller
         $users =  User::latest();
 
         if(request('search')){
-            $users->where('email', 'like', '%' . request('search') . '%');
+            $users->where('email', 'like', '%' . request('search') . '%')
+            ->orWhere('name', 'like',  '%' . request('search') . '%');
         }
         //* ------------------------
         return view('admin.users.index', [

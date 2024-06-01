@@ -18,9 +18,9 @@
                 <div class="">
                     <img 
                     style="width: 100px; height: 100px"
-                    src="{{ $user->profile->picture ? asset('storage/' . $user->profile->picture) : 'https://media.discordapp.net/attachments/1237107768910151700/1245428598320533574/IMG_2945.jpg?ex=6658b744&is=665765c4&hm=8479e5ff42f9b3a2cb54f175c3bc990c5f376bd9b629d3354f9484c8ad3cac7d&=&format=webp'}}"
+                    src="{{ $user->profile->picture ? asset('storage/' . $user->profile->picture) : 'https://static.vecteezy.com/system/resources/previews/036/280/651/original/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg'}}"
                     alt=""
-                    class=" rounded-full bg-gray-200 text-gray-900 text-sm border border-gray-700 "
+                    class=" rounded-full bg-gray-200 text-gray-900 text-sm border border-white"
                     >
                 </div>
                 <div class="col-span-3 text-2xl text-[#374e75] font-semibold m-2">

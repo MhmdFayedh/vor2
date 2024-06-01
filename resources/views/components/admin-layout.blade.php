@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -11,7 +10,6 @@
     @vite('resources/js/app.js')
     <title>VOR</title>
 </head>
-<x-navbar/>
 <body  
     x-data="{
         aside: false 
@@ -26,7 +24,12 @@
 
             <x-dropdown>
                 <x-slot:title>
-                    <img src="{{ asset("storage/" . auth()->user()->profile->picture) }}" alt="" class="w-10 h-10 rounded-full object-cover">
+                    <img 
+                    src="{{ auth()->user()->profile->picture ? 
+                    asset('storage/' .  auth()->user()->profile->picture) :
+                     'https://static.vecteezy.com/system/resources/previews/036/280/651/original/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg'}}"
+                    alt="" 
+                    class="border border-white w-10 h-10 rounded-full object-cover">
                 </x-slot>
                 @can('admin')
                     <x-dropdown-item type="link" :link="'/admin'">لوحة التحكم</x-dropdown-item>
@@ -76,7 +79,6 @@
             </div>
         </nav>
 
-        {{-- This Aside for bigger >=  1024px width --}}
         <aside class="hidden lg:block  xl:w-1/2 container mx-auto lg:col-span-4">
             <div class="flex justify-between items-baseline">
                     <a href="/admin">

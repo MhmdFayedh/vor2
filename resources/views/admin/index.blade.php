@@ -60,13 +60,13 @@ href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
                     group
                 </span>
             </h1>
-            <span class="text-2xl font-bold">1200</span>
+            <span class="text-2xl font-bold">{{ count($users)}}</span>
 
             <div class="w-full mt-5 border-t border-gray-200 py-6">
                 <div class=" w-1/4 leading-7">
-                    <p class="flex justify-between">مدراء النظام <span class="font-bold">15</span></p>
-                    <p class="flex justify-between">المشرفين <span class="font-bold">40</span></p>
-                    <p class="flex justify-between">المتطوعين <span class="font-bold">1195</span></p>
+                    <p class="flex justify-between">مدراء النظام <span class="font-bold">{{count($adminUsers)}}</span></p>
+                    <p class="flex justify-between">المشرفين <span class="font-bold">{{count($supervisorUsers)}}</span></p>
+                    <p class="flex justify-between">المتطوعين <span class="font-bold">{{count($volunteerUsers)}}</span></p>
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function(){
 
 //* Supervisor Routes
 
-Route::middleware('supervisor')->group(function () {
+Route::middleware(['supervisor', 'auth'])->group(function () {
     Route::get('supervisor' , [SupervisorController::class , 'index']);
     Route::get('supervisor/request/create', [RequestController::class, 'create']);
     Route::post('supervisor/request', [RequestController::class, 'store']);
@@ -45,7 +45,7 @@ Route::middleware('supervisor')->group(function () {
 
 
 //* Admin Routes
-Route::middleware('admin')->group(function () {
+Route::middleware(['admin', 'auth'])->group(function () {
     Route::get('admin', function (){
         return view('admin.index', [
             'requests' => ModelsRequest::all(),
@@ -53,6 +53,10 @@ Route::middleware('admin')->group(function () {
             'ActiveOpportunity' => ModelsRequest::where('classification', '=' , 'opportunity')->where('status', '=', 'accepted')->get(),
             'PendingIniative' => ModelsRequest::where('classification', '=' , 'initiative')->where('status', '=', 'pending')->get(),
             'PendingOpportunity' => ModelsRequest::where('classification', '=' , 'opportunity')->where('status', '=', 'pending')->get(),
+            'users' => User::all(),
+            'adminUsers' => User::where('role', '=', 'admin')->get(),
+            'supervisorUsers' => User::where('role', '=', 'supervisor')->get(),
+            'volunteerUsers' => User::where('role', '=', 'volunteer')->get()
         ]);
     })->name('dashboard');
 
